@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'hanken-grotesk';
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'hanken-grotesk';
+}
+
+:root {
+    font-size: 14px;
+
+    --light-red: hsl(0, 100%, 67%);
+    --orangeyyellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+} 
+
+.text-ligth-lavender {
+    color: var(--light-lavender);
+}
+
+.text-dark-lavender {
+    color: hsl(241, 70%, 75%);
+}
+
+.text-ligth-blue {
+    color: hsl(222, 20%, 70%);
+}
+
+.text-dark-blue {
+    color: var(--dark-gray-blue);
+}
+
+.text-red {
+    color: var(--light-red);
+}
+
+.text-orange {
+    color: var(--orangeyyellow);
+}
+
+.text-green {
+    color: var(--green-teal);
+}
+
+.text-blue {
+    color: var(--cobalt-blue);
+}
+
+.bg-ligth-red {
+    background-color: hsl(0, 100%, 67%, 0.075);
+}
+
+.bg-ligth-orange {
+    background-color: hsl(39, 100%, 56%, 0.075);
+}
+
+.bg-ligth-green {
+    background-color: hsl(166, 100%, 37%, 0.075);
+}
+
+.bg-ligth-blue {
+    background-color: hsl(234, 100%, 45%, 0.075);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.main-section {
+    margin: 0 auto;
+    border-radius: 30px;
+    display: flex;
+    box-shadow: 20px 30px 30px 0px hsl(241, 100%, 89%, 0.25);
+}
+
+.result-section,
+.summary-section {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 30px;
+    color: white;
+    justify-content: space-between;
+}
+
+.result-section {
+    align-items: center;
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+.result-percentage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 11rem;
+    width: 11rem;
+    margin: 1rem 0;
+    padding: 3rem;
+    background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 50%;
+}
+
+.result-grade {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.result-max-grade {
+    font-size: 1rem; 
+    font-weight: bold;
+}
+
+.result-comment {
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.result-annotation {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.summary-section {
+    background-color: white;
+    color: black;
+}
+
+.individual-grades > div {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.individual-grades > div > span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.continue-button {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    color: white;
+    border: none;
+    border-radius: 99px;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: linear-gradient 500ms;
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.continue-button::after {
+    content: 'Continue';
+    display: grid;
+    place-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--dark-gray-blue);
+    width: 100%;
+    height: 100%;
+    transition: opacity 500ms;
+    z-index: 1;
+}
+
+.continue-button:hover::after {
+    opacity: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        height: auto;
+    }
+
+    .main-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .result-section,
+    .summary-section {
+        width: 100%;
+        height: 60%;
+    }
+
+    .result-section {
+        border-radius: 0 0 30px 30px;
+        height: 40%;
+    }
+  }
